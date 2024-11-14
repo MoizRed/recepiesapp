@@ -15,7 +15,7 @@ export default function Search({ setrecepies }: Props) {
         `https://api.spoonacular.com/recipes/complexSearch?query=${Query}&apiKey=${apikey2}`,
         {
           method: "GET",
-        }
+        },
       );
 
       const data = await res.json();
@@ -37,8 +37,31 @@ export default function Search({ setrecepies }: Props) {
 
   return (
     <>
-      <form>
-        <input onChange={(e) => handlechange(e)} value={Query} type="text" />
+      <form
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          margin: "16px",
+          padding: "16px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+        }}>
+        <input
+          onChange={handlechange}
+          value={Query}
+          type="text"
+          style={{
+            padding: "8px",
+            borderRadius: "4px",
+            border: "1px solid #ccc",
+            boxShadow: "inset 0 1px 3px rgba(0, 0, 0, 0.1)",
+            fontSize: "16px",
+            width: "100%",
+            maxWidth: "400px",
+          }}
+          placeholder="Search for recipes..."
+        />
       </form>
     </>
   );
