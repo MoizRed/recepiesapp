@@ -1,7 +1,6 @@
 type Props = {};
 
 export default function Nav({}: Props) {
-
   return (
     <nav
       style={{
@@ -21,5 +20,4 @@ export default function Nav({}: Props) {
       </h1>
     </nav>
   );
-
 }

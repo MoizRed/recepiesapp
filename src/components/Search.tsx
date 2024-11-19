@@ -46,7 +46,8 @@ export default function Search({ setrecepies }: Props) {
           padding: "16px",
           borderRadius: "8px",
           boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-        }}>
+        }}
+      >
         <input
           onChange={handlechange}
           value={Query}

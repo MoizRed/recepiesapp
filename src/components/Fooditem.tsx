@@ -5,11 +5,16 @@ type Props = {
     id: number;
     imageType: string;
   };
-  condition : boolean
-  setcondition : (condition : boolean) => void
+  setcondition: (condition: boolean) => void;
+  setid: (id: number) => void;
 };
 
-export default function Fooditem({ food  , condition , setcondition}: Props) {
+export default function Fooditem({ setid, food, setcondition }: Props) {
+  function handleclick() {
+    setcondition(true);
+    setid(food.id);
+  }
+
   return (
     <div
       style={{
@@ -27,8 +32,9 @@ export default function Fooditem({ food  , condition , setcondition}: Props) {
       }}
     >
       <h1>{food.title}</h1>
-      <img src={food.image} alt={food.title}></img>
-      <button onClick={() => setcondition(true)}>view details</button>
+      <img style={{ width: "300px", height: "200px", borderRadius:  "8px" , boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)"}} src={food.image} alt={food.title}></img>
+      <button style={{ marginTop: "16px" , backgroundColor: "#007BFF", color: "#fff", border: "none", borderRadius: "4px", padding: "8px 16px", cursor: "pointer" }} onClick={() => handleclick()}>view details</button>
+      <div>food id : {food.id}</div>
     </div>
   );
 }
